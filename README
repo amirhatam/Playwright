@@ -1,0 +1,17 @@
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({
+    headless: false
+  });
+  const context = await browser.newContext();
+  await page.getByRole('button', { name: '1' }).click();
+  await page.getByRole('button', { name: '0' }).click();
+  await page.getByRole('button', { name: 'Multiplier' }).click();
+  await page.getByRole('button', { name: '5' }).click();
+  await page.getByRole('group', { name: 'clavier' }).getByRole('button', { name: 'Entrée' }).click();
+
+  // ---------------------
+  await context.close();
+  await browser.close();
+})();
